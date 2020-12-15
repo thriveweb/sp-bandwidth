@@ -40,10 +40,10 @@ function readFile (file) {
     estimate = chalk.green(estimate)
   }
 
-  bandwidth = bytesToSize(bandwidth)
-  if (bandwidth.includes('GB')) bandwidth = chalk.red(bandwidth)
-  if (bandwidth.includes('MB')) bandwidth = chalk.yellow(bandwidth)
-  if (bandwidth.includes('KB')) bandwidth = chalk.green(bandwidth)
+  bandwidth = bytesToSize(bandwidth * 4)
+  //if (bandwidth.includes('GB')) bandwidth = chalk.red(bandwidth)
+  //if (bandwidth.includes('MB')) bandwidth = chalk.yellow(bandwidth)
+  //if (bandwidth.includes('KB')) bandwidth = chalk.green(bandwidth)
 
   const output = `
     ${chalk.green.bold(_.padEnd(title, 20))} ${_.padEnd(bandwidth, 20)} $${_.padEnd(estimate + '/mo', 20)} From: ${chalk.blue(start_date)} To: ${chalk.blue(end_date)}
