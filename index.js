@@ -41,6 +41,7 @@ function readFile (file) {
   }
 
   bandwidth = bytesToSize(bandwidth * 4)
+  if (bandwidth.includes('T')) bandwidth = chalk.red(bandwidth)
   if (bandwidth.includes('GB')) bandwidth = chalk.red(bandwidth)
   if (bandwidth.includes('MB')) bandwidth = chalk.yellow(bandwidth)
   if (bandwidth.includes('KB')) bandwidth = chalk.green(bandwidth)
