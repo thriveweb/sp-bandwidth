@@ -31,7 +31,7 @@ function readFile (file) {
     bandwidth
   } = obj.general
 
-  let estimate = _.round(bandwidth / 1024 / 1024 / 1024 * 0.09 * 4, 2)
+  let estimate = _.round(bandwidth / 1024 / 1024 / 1024 * 0.09 * 4, 4)
   if (estimate > 10) {
     estimate = chalk.red(estimate)
   } else if (estimate > 1) {
